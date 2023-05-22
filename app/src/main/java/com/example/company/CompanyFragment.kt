@@ -6,26 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.company.databinding.FragmentCompanyBinding
 
 class CompanyFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = CompanyFragment()
-    }
-
-    private lateinit var viewModel: CompanyViewModel
-
+    private lateinit var binding: FragmentCompanyBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_company, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CompanyViewModel::class.java)
-        // TODO: Use the ViewModel
+        binding = FragmentCompanyBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
 }
