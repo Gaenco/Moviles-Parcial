@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.company.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_companyFragment"
+            app:destination="@id/companyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newCompanyFragment"
+            app:destination="@id/newCompanyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/companyFragment"
+        android:name="com.example.company.CompanyFragment"
+        android:label="fragment_company"
+        tools:layout="@layout/fragment_company" >
+        <action
+            android:id="@+id/action_companyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newCompanyFragment"
+        android:name="com.example.company.NewCompanyFragment"
+        android:label="fragment_new_company"
+        tools:layout="@layout/fragment_new_company" >
+        <action
+            android:id="@+id/action_newCompanyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
