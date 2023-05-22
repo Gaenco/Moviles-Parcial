@@ -2,7 +2,7 @@ package com.example.company.repositories
 
 import com.example.company.data.model.CompanyModel
 
-class MovieRepository(private val companys: MutableList<CompanyModel>) {
+class CompanyRepository(private val companys: MutableList<CompanyModel>) {
 
     fun getCompanys() = companys
 
