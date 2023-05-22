@@ -28,7 +28,7 @@
                 android:fontFamily="sans-serif-condensed-medium"
                 android:text="@={viewmodel.name}"
                 android:textColor="@color/white"
-                android:textSize="64dp"
+                android:textSize="63dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
