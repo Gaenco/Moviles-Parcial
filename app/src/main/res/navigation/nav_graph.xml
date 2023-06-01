@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.company.HomeFragment"
+        android:name="com.example.company.ui.company.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/companyFragment"
-        android:name="com.example.company.CompanyFragment"
+        android:name="com.example.company.ui.company.CompanyFragment"
         android:label="fragment_company"
         tools:layout="@layout/fragment_company" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/newCompanyFragment"
-        android:name="com.example.company.NewCompanyFragment"
+        android:name="com.example.company.ui.company.NewCompanyFragment"
         android:label="fragment_new_company"
         tools:layout="@layout/fragment_new_company" >
         <action

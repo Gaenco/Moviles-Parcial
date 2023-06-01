@@ -1,8 +1,9 @@
-package com.example.company
+package com.example.company.ui.company
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.company.R
 import com.example.company.data.model.CompanyModel
 
 class CompanyAdapter(private val clickListener: (CompanyModel) -> Unit) : RecyclerView.Adapter<CompanyViewHolder>() {
@@ -28,8 +29,8 @@ class CompanyAdapter(private val clickListener: (CompanyModel) -> Unit) : Recycl
 
     override fun onBindViewHolder(holder: CompanyViewHolder, position: Int) {
         data?.let {
-            val movie = it[position]
-            holder.bind(movie, clickListener)
+            val company = it[position]
+            holder.bind(company, clickListener)
         }
     }
 

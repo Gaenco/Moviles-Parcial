@@ -1,4 +1,4 @@
-package com.example.company
+package com.example.company.ui.company
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,24 +10,24 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.company.R
 import com.example.company.data.companys
 import com.example.company.data.model.CompanyModel
 import com.example.company.databinding.FragmentCompanyBinding
+import com.example.company.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentCompanyBinding
+    private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: CompanyAdapter
-    private lateinit var btnCreateNewMovie: Button
 
-
-    private val movieViewModel: CompanyViewModel by activityViewModels {
+    private val companyViewModel: CompanyViewModel by activityViewModels {
         CompanyViewModel.Factory
     }
 
-    private fun showSelectedItem(movie: CompanyModel) {
-        movieViewModel.setSelectedMovie(movie)
+    private fun showSelectedItem(company: CompanyModel) {
+        companyViewModel.setSelectedCompany(company)
         findNavController().navigate(R.id.action_homeFragment_to_companyFragment)
     }
 
@@ -35,19 +35,21 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCompanyBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    private fun setRecyclerView(view: View) {
-        binding.cardrecycler.layoutManager = LinearLayoutManager(view.context)
-        adapter = CompanyAdapter { selectedMovie -> showSelectedItem(selectedMovie) }
-        binding.cardrecycler.adapter = adapter
-        displayMovies()
+    private fun setRecyclerView(view: View){
+        binding.RecycleCard.layoutManager = LinearLayoutManager(view.context)
+        adapter = CompanyAdapter { selectedCompany -> showSelectedItem(selectedCompany) }
+        binding.RecycleCard.adapter = adapter
+        displayCompany()
+
     }
 
-    private fun displayMovies() {
-        adapter.setData(movieViewModel.getCompanys())
+
+    private fun displayCompany() {
+        adapter.setData(companyViewModel.getCompanys())
         adapter.notifyDataSetChanged()
     }
 
@@ -56,8 +58,8 @@ class HomeFragment : Fragment() {
         setRecyclerView(view)
         adapter.setData(companys)
 
-        btnCreateNewMovie.setOnClickListener {
-            movieViewModel.clearData()
+        binding.btnNavCreateNewCompany.setOnClickListener {
+            companyViewModel.clearData()
 
             it.findNavController().navigate(R.id.action_homeFragment_to_newCompanyFragment)
         }

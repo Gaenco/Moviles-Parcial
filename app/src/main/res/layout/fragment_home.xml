@@ -7,52 +7,54 @@
 
         <variable
             name="viewmodel"
-            type="com.example.company.CompanyViewModel" />
+            type="com.example.company.ui.company.CompanyViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.movie.BillboardFragment"
-        android:background="@color/background">
+        android:background="@color/background"
+        tools:context=".ui.company.HomeFragment">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/home_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:gravity="center"
-            android:text="Home"
+            android:text="@string/companys_title"
+            android:textColor="@color/white"
             android:textSize="31dp"
             android:textStyle="bold"
-            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cardrecycler"
+            android:id="@+id/Recycle_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/home_text"
             app:layout_constraintVertical_bias="0.223"
             tools:itemCount="2"
             tools:layout_editor_absoluteX="16dp"
             tools:listitem="@layout/item_company" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btnNavCreateNewMovie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btnNavCreateNewCompany"
+            android:layout_width="55dp"
+            android:layout_height="60dp"
             android:layout_margin="16dp"
-            android:backgroundTint="@color/material_dynamic_neutral80"
-            android:src="@drawable/addcompany"
+            android:layout_marginBottom="28dp"
+            android:backgroundTint="@color/white"
             app:borderWidth="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

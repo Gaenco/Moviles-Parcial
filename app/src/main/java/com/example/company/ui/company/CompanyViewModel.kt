@@ -1,10 +1,11 @@
-package com.example.company
+package com.example.company.ui.company
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.company.CompanyReviewerApplication
 import com.example.company.data.model.CompanyModel
 import com.example.company.repositories.CompanyRepository
 
@@ -14,7 +15,7 @@ class CompanyViewModel(private val repository: CompanyRepository) : ViewModel() 
     var status = MutableLiveData("")
 
 
-    fun setSelectedMovie(company: CompanyModel){
+    fun setSelectedCompany(company: CompanyModel){
         name.value = company.name
         sector.value = company.sector
     }

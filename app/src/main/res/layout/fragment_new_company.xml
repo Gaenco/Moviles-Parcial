@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.company.CompanyViewModel" />
+            type="com.example.company.ui.company.CompanyViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.movie.NewMovieFragment"
+        tools:context=".ui.company.NewCompanyFragment"
         android:background="@color/background">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,20 +27,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="92dp"
                 android:gravity="center"
-                android:text="New Company"
+                android:text="@string/new_company_title"
                 android:textColor="@color/white"
-                android:textSize="32dp"
+                android:textSize="@dimen/medium_size"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nameTv"
+                android:id="@+id/add_company_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="32dp"
-                android:hint="Company Name"
+                android:layout_margin="@dimen/medium_gap"
+                android:hint="@string/company_name_hint"
                 android:textColorHint="@color/white"
                 app:boxStrokeColor="@color/white"
                 app:hintTextColor="@color/white"
@@ -60,17 +60,20 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/CalificationTv"
+                android:id="@+id/add_sector_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:hint="Sector Name"
+                android:layout_margin="32dp"
+                android:hint="@string/sector_name_hint"
                 android:textColorHint="@color/white"
                 app:boxStrokeColor="@color/white"
                 app:hintTextColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameTv"
-                tools:layout_editor_absoluteX="16dp">
+                app:layout_constraintEnd_toEndOf="@+id/add_company_name"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/add_company_name"
+                app:layout_constraintTop_toBottomOf="@+id/add_company_name"
+                app:layout_constraintVertical_bias="0.095">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/qualification_edit_text"
@@ -82,21 +85,21 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <Button
                 android:id="@+id/submit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/material_dynamic_neutral80"
+                android:backgroundTint="@color/card_color"
                 android:onClick="@{()-> viewmodel.createCompany()}"
-                android:text="Submit"
+                android:text="@string/submit_button_text"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CalificationTv"
-                app:layout_constraintVertical_bias="0.313"></Button>
-            " />
+                app:layout_constraintEnd_toEndOf="@+id/add_sector_name"
+                app:layout_constraintHorizontal_bias="0.374"
+                app:layout_constraintStart_toStartOf="@+id/add_sector_name"
+                app:layout_constraintTop_toBottomOf="@+id/add_sector_name"
+                app:layout_constraintVertical_bias="0.392" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout></layout>

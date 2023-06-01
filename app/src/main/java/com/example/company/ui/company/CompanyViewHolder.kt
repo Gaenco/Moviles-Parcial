@@ -1,8 +1,9 @@
-package com.example.company
+package com.example.company.ui.company
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.company.R
 import com.example.company.data.model.CompanyModel
 
 class CompanyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -14,16 +15,16 @@ class CompanyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.findViewById<TextView>(R.id.company_sector)
 
 
-    fun bind(movie: CompanyModel, onClickListener: (CompanyModel) -> Unit) {
-        nameTextView.text = movie.name
-        sectorTextView.text = movie.sector
+    fun bind(company: CompanyModel, onClickListener: (CompanyModel) -> Unit) {
+        nameTextView.text = company.name
+        sectorTextView.text = company.sector
 
         nameTextView.setOnClickListener {
-            onClickListener(movie)
+            onClickListener(company)
         }
 
         sectorTextView.setOnClickListener {
-            onClickListener(movie)
+            onClickListener(company)
         }
     }
 

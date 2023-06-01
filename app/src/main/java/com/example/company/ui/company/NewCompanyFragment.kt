@@ -1,14 +1,12 @@
-package com.example.company
+package com.example.company.ui.company
 
 import android.os.Bundle
 import android.util.Log
-import android.view.DisplayCutout
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.company.databinding.FragmentNewCompanyBinding
 
